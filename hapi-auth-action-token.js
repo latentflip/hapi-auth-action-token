@@ -28,11 +28,10 @@ exports.generateToken = function (scope, data, config) {
         "config.key (privateKey) is required"
     );
 
-    return jwt.sign({
-        type: 'action-token',
-        scope: Array.isArray(scope) ? scope : [scope],
-        data: data
-    }, config.key, {
+    data.type = 'action-token';
+    data.scope = Array.isArray(scope) ? scope : [scope];
+
+    return jwt.sign(data, config.key, {
         expiresInMinutes: config.expiresInMinutes
     });
 };

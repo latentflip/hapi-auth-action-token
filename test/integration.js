@@ -44,7 +44,7 @@ describe('action-token', function () {
 
     it('auths tokens in the url', function (done) {
 
-        var token = actionTokenAuth.generateActionToken( 'reset-password', {}, { expiresInMinutes: 10, key: privateKey });
+        var token = actionTokenAuth.generateToken( 'reset-password', {}, { expiresInMinutes: 10, key: privateKey });
 
         var request = { method: 'GET', url: '/inUrl/' + token };
 
@@ -57,7 +57,7 @@ describe('action-token', function () {
 
     it('auths tokens in the query', function (done) {
 
-        var token = actionTokenAuth.generateActionToken( 'reset-password', {}, { expiresInMinutes: 10, key: privateKey });
+        var token = actionTokenAuth.generateToken( 'reset-password', {}, { expiresInMinutes: 10, key: privateKey });
 
         var request = { method: 'GET', url: '/inQuery?token=' + token };
 
@@ -91,7 +91,7 @@ describe('action-token', function () {
     });
 
     it('fails with invalid scope', function (done) {
-        var token = actionTokenAuth.generateActionToken( 'some-wrong-scope', {}, { expiresInMinutes: 10, key: privateKey });
+        var token = actionTokenAuth.generateToken( 'some-wrong-scope', {}, { expiresInMinutes: 10, key: privateKey });
 
         var request = { method: 'GET', url: '/inQuery?token=' + token };
 

@@ -11,7 +11,7 @@ exports.register = function (server, options, next) {
     next();
 };
 
-exports.generateActionToken = function (scope, data, config) {
+exports.generateToken = function (scope, data, config) {
     Hoek.assert(
         typeof scope === 'string' || Array.isArray(scope),
         "scope must be a string or array of strings"

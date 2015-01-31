@@ -25,7 +25,8 @@ exports.generateActionToken = function (scope, data, config) {
     );
     Hoek.assert(
         config && config.key,
-        "config.key (privateKey) is required");
+        "config.key (privateKey) is required"
+    );
 
     return jwt.sign({
         type: 'action-token',
@@ -82,7 +83,6 @@ internals.implementation = function (server, options) {
                 if (!settings.validateFunc) {
                     return reply.continue({ credentials: decoded });
                 }
-
             });
 
         }

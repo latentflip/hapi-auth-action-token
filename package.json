@@ -1,6 +1,6 @@
 {
   "name": "hapi-auth-action-token",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Often in web applications you need to be able to generate secure, unguessable, expirable urls for specific actions.",
   "main": "hapi-auth-action-token.js",
   "scripts": {

@@ -19,7 +19,7 @@ exports.generateToken = function (scope, data, config) {
     Hoek.assert(
         (config && (
             typeof config.expiresInMinutes === 'number' ||
-            expiresInMinutes === false)
+            config.expiresInMinutes === false)
         ),
         "config.expiresInMinutes is not optional, set to number or false for no expiration (not usually recommended)"
     );

@@ -17,5 +17,9 @@
     "boom": "^2.6.1",
     "hoek": "^2.11.0",
     "jsonwebtoken": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/latentflip/hapi-auth-action-token.git"
   }
 }
